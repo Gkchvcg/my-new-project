@@ -1,0 +1,356 @@
+1. Fibonacci Series
+Problem
+
+Write a program to print the Fibonacci series up to n terms.
+
+Approach
+
+The Fibonacci series is a sequence where each number is the sum of the two previous numbers.
+
+Formula:
+
+F(n) = F(n-1) + F(n-2)
+
+Steps:
+
+Start with the first two numbers 0 and 1.
+
+Print them.
+
+Calculate the next term by adding the previous two numbers.
+
+Repeat until n terms are printed.
+
+Java Code
+public class Fibonacci {
+    public static void main(String[] args) {
+        int n = 10;
+        int a = 0, b = 1;
+
+        System.out.print("Fibonacci Series: ");
+
+        for(int i = 0; i < n; i++) {
+            System.out.print(a + " ");
+            int next = a + b;
+            a = b;
+            b = next;
+        }
+    }
+}
+Example Output
+Fibonacci Series: 0 1 1 2 3 5 8 13 21 34
+2. Sum of Digits of a Number
+Problem
+
+Write a program to find the sum of digits of a given number.
+
+Approach
+
+Take the number.
+
+Extract the last digit using % 10.
+
+Add it to the sum.
+
+Remove the last digit using / 10.
+
+Repeat until the number becomes 0.
+
+Java Code
+public class SumOfDigits {
+    public static void main(String[] args) {
+        int num = 12345;
+        int sum = 0;
+
+        while(num != 0) {
+            int digit = num % 10;
+            sum += digit;
+            num /= 10;
+        }
+
+        System.out.println("Sum of digits = " + sum);
+    }
+}
+Example Output
+Sum of digits = 15
+3. Palindrome Number
+Problem
+
+Write a program to check whether a number is a palindrome or not.
+
+Approach
+
+A palindrome number reads the same forward and backward.
+
+Steps:
+
+Reverse the number.
+
+Compare the reversed number with the original.
+
+If both are equal → Palindrome.
+
+Java Code
+public class Palindrome {
+    public static void main(String[] args) {
+        int num = 121;
+        int original = num;
+        int reverse = 0;
+
+        while(num != 0) {
+            int digit = num % 10;
+            reverse = reverse * 10 + digit;
+            num /= 10;
+        }
+
+        if(original == reverse)
+            System.out.println("Palindrome");
+        else
+            System.out.println("Not Palindrome");
+    }
+}
+Example Output
+Palindrome
+4. Triangle Pattern
+Problem
+
+Write a program to print a triangle pattern.
+
+Approach
+
+Use nested loops:
+
+Outer loop controls rows.
+
+Inner loop prints stars.
+
+Java Code
+public class TrianglePattern {
+    public static void main(String[] args) {
+        int rows = 5;
+
+        for(int i = 1; i <= rows; i++) {
+            for(int j = 1; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+}
+Example Output
+*
+* *
+* * *
+* * * *
+* * * * *
+5. Factorial of a Number
+Problem
+
+Write a program to calculate the factorial of a number.
+
+Approach
+
+Factorial of n is the product of all numbers from 1 to n.
+
+n! = n × (n-1) × (n-2) ... × 1
+
+Use a loop to multiply numbers from 1 to n.
+
+Java Code
+public class Factorial {
+    public static void main(String[] args) {
+        int n = 5;
+        int fact = 1;
+
+        for(int i = 1; i <= n; i++) {
+            fact *= i;
+        }
+
+        System.out.println("Factorial = " + fact);
+    }
+}
+Example Output
+Factorial = 120
+
+✅ This format looks clean, professional, and GitHub-ready.
+
+If you want, I can also show you:
+
+How to push this README + code to GitHub (takes 2 minutes)
+
+Or make a better formatted README with markdown badges, code blocks, and table of contents so it looks like a pro developer wrote it. 😎
+
+write in javascript
+
+Here’s a clean README.md version using JavaScript for all problems. You can directly paste this into your GitHub repository.
+
+Practical Assignment – Basic JavaScript Programs
+1. Fibonacci Series
+Problem
+
+Write a program to print the Fibonacci series up to n terms.
+
+Approach
+
+The Fibonacci sequence is a series where each number is the sum of the previous two numbers.
+
+Steps:
+
+Start with 0 and 1.
+
+Print them.
+
+Generate the next number by adding the previous two numbers.
+
+Repeat until n terms are printed.
+
+JavaScript Code
+function fibonacci(n) {
+    let a = 0, b = 1;
+
+    console.log("Fibonacci Series:");
+
+    for (let i = 0; i < n; i++) {
+        console.log(a);
+        let next = a + b;
+        a = b;
+        b = next;
+    }
+}
+
+fibonacci(10);
+Example Output
+0
+1
+1
+2
+3
+5
+8
+13
+21
+34
+2. Sum of Digits of a Number
+Problem
+
+Write a program to find the sum of digits of a given number.
+
+Approach
+
+Extract the last digit using % 10.
+
+Add it to the sum.
+
+Remove the last digit using integer division.
+
+Repeat until the number becomes 0.
+
+JavaScript Code
+function sumOfDigits(num) {
+    let sum = 0;
+
+    while (num !== 0) {
+        sum += num % 10;
+        num = Math.floor(num / 10);
+    }
+
+    return sum;
+}
+
+console.log("Sum of digits:", sumOfDigits(12345));
+Example Output
+Sum of digits: 15
+3. Palindrome Number
+Problem
+
+Write a program to check whether a number is a palindrome.
+
+Approach
+
+Reverse the number.
+
+Compare the reversed number with the original number.
+
+If they are equal → Palindrome.
+
+JavaScript Code
+function isPalindrome(num) {
+    let original = num;
+    let reverse = 0;
+
+    while (num !== 0) {
+        let digit = num % 10;
+        reverse = reverse * 10 + digit;
+        num = Math.floor(num / 10);
+    }
+
+    return original === reverse;
+}
+
+let number = 121;
+
+if (isPalindrome(number))
+    console.log("Palindrome");
+else
+    console.log("Not Palindrome");
+Example Output
+Palindrome
+4. Triangle Pattern
+Problem
+
+Write a program to print a triangle star pattern.
+
+Approach
+
+Use nested loops:
+
+Outer loop controls rows.
+
+Inner loop prints stars.
+
+JavaScript Code
+function printTriangle(rows) {
+    for (let i = 1; i <= rows; i++) {
+        let row = "";
+
+        for (let j = 1; j <= i; j++) {
+            row += "* ";
+        }
+
+        console.log(row);
+    }
+}
+
+printTriangle(5);
+Example Output
+*
+* *
+* * *
+* * * *
+* * * * *
+5. Factorial of a Number
+Problem
+
+Write a program to calculate the factorial of a number.
+
+Approach
+
+Factorial of n is the product of all integers from 1 to n.
+
+Formula:
+
+n! = n × (n-1) × (n-2) ... × 1
+JavaScript Code
+function factorial(n) {
+    let fact = 1;
+
+    for (let i = 1; i <= n; i++) {
+        fact *= i;
+    }
+
+    return fact;
+}
+
+console.log("Factorial:", factorial(5));
+Example Output
+Factorial: 120
